@@ -2,6 +2,10 @@
 <div class="row">
     <div class="col-md-12">
         <h3><span class="label label-warning">Últimos eventos</span></h3>
+        <?php if (empty($nombres)) {
+            echo "<p><b>No se realizó ningún evento</b></p>";
+        }
+        else { ?>
         <table class="table table-striped">
         <thead>
           <tr>
@@ -23,10 +27,15 @@
          </tbody>
         </table>
         <?php echo anchor('inicio/eventos', 'Ver eventos anteriores', array('style'=>'float: right', 'class'=>'btn btn-default btn-small show-option', 'title'=>'Ver eventos anteriores')); ?>
+        <?php } ?>
     </div>
     
     <div class="col-md-6">
         <h3><span class="label label-success">Últimas ventas</span></h3>
+        <?php if (empty($ventas)) {
+            echo "<p><b>No se han realizado ventas</b></p>";
+        }
+        else { ?>
         <table class="table table-striped">
             <thead>
           <tr>
@@ -47,6 +56,7 @@
          </tbody>
         </table>
         <?php echo anchor('inicio/ventas', 'Ver ventas anteriores', array('style'=>'float: right', 'class'=>'btn btn-default btn-small show-option', 'title'=>'Ver ventas anteriores')); ?>
+        <?php } ?>
     </div>
     <div class="col-md-6">
         <h3><span class="label label-primary">Pedidos pendientes</span></h3>

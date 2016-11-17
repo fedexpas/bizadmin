@@ -328,6 +328,9 @@ class Producto extends CI_Controller {
                 // @TODO
             }
             
+            /***             ERROR               ***/
+            // Cuando termina la venta no se vende necesariamente un solo producto, hay que checar en cliente_compra_temp usando el ID de venta para ver todos los productos que se vendieron
+            
             if ($_POST['producto_id']) { // $_POST['producto_id'] es el ID del producto y debe ser obtenido porque esta en un input oculto (hidden)
                 $producto_id = $_POST['producto_id'];
             }
